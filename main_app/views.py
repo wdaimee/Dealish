@@ -1,7 +1,7 @@
 from django.shortcuts import render
+from .forms import ReviewForm, NotesForm
 
 # Create your views here.
-
 
 def deals_index(request):
     pass
@@ -9,12 +9,13 @@ def deals_index(request):
 def restaurant_detail(request):
     pass
 
+# follow add feeding cats lesson, form will be needed
 def add_review(request):
     pass
 
 def delete_review(request):
     pass
-
+# Use the same form as add_review
 def update_review(request):
     pass
 
@@ -36,6 +37,7 @@ def add_favourite(request):
 def delete_favourite(request):
     pass
 
+# form needed
 def add_note(request):
     pass
 
