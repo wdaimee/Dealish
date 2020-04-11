@@ -120,4 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+import environ
+environ.Env()
+environ.Env.read_env()
