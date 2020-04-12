@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 import environ
 environ.Env()
 environ.Env.read_env()
+
+LOGIN_REDIRECT_URL = '/deals/'
+
+LOGOUT_REDIRECT_URL = '/deals/'
