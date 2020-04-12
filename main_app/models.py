@@ -25,5 +25,5 @@ class Favourite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Notes(models.Model):
-    text: models.TextField(max_length=250)
+    text = models.TextField(max_length=250)
     favourite = models.ForeignKey(Favourite, on_delete=models.CASCADE)

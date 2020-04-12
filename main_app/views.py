@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ReviewForm, NotesForm
+from django.http import HttpResponse
 
 # Create your views here.
+def redirect_view(request):
+    return redirect('deals/')
 
 def deals_index(request):
     pass
-
+    
 def restaurant_detail(request):
     pass
 

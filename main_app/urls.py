@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    # Root redirect to Deals/
+    path('', views.redirect_view, name='redirect'),
     # path to view a list of restaurants/deals in area
     path('deals/', views.deals_index, name='deals_index'),
     # path to view a restraurant's page
