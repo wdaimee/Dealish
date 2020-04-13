@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'main_app',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,3 +128,5 @@ environ.Env.read_env()
 LOGIN_REDIRECT_URL = '/deals/'
 
 LOGOUT_REDIRECT_URL = '/deals/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
