@@ -53,16 +53,12 @@ def update_note(request):
     pass
 
 def signup(request):
-    error_message = ''
+    form = UserCreationForm(request.POST or None)
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
             return redirect('deals_index')
-        else:
-            error_message = 'Invalid sign up - try again'
-    form = UserCreationForm()
-    context = {'form': form, 'error_message': error_message}
+    context = {'form': form} 
     return render(request, 'registration/signup.html', context)
 
