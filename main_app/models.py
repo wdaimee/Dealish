@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 import geopy.geocoders
 from geopy.geocoders import GoogleV3
 from urllib.error import URLError
+import os
 
 # Create your models here.
 class Restaurant(models.Model):
@@ -23,7 +24,7 @@ class Restaurant(models.Model):
         if not self.coordinates:
             address = f"{self.address} {self.city}"
             address = address.encode('utf-8')
-            geocoder = GoogleV3(api_key='AIzaSyAp_xdxr3d7wTp-g2xrrP5vTFAfipgSmfI')
+            geocoder = GoogleV3(api_key=os.environ['GOOGLE_API_KEY'])
             try:
                 _, latlon = geocoder.geocode(address)
             except (URLError, ValueError, TypeError):
