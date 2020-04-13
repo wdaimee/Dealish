@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Review, Notes
+from .models import Review, Note
 
 class ReviewForm(ModelForm):
     class Meta:
@@ -8,5 +8,5 @@ class ReviewForm(ModelForm):
 
 class NotesForm(ModelForm):
     class Meta:
-        model = Notes
+        model = Note
         fields = ['text']
