@@ -1,0 +1,252 @@
+/* MENU CSS */
+#body-row {
+    margin-left:0;
+    margin-right:0;
+}
+#sidebar-container {
+    
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #020060;
+    overflow-x: hidden;
+    padding: 0;
+}
+#main-content{
+    
+    margin-left: 230px;
+}
+
+/* Sidebar sizes when expanded and expanded */
+.sidebar-expanded {
+    width: 230px;
+}
+.sidebar-collapsed {
+    width: 60px;
+}
+
+/* Menu item*/
+#sidebar-container .list-group a {
+    height: 50px;
+    color: white;
+}
+
+/* Submenu item*/
+#sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+}
+.sidebar-submenu {
+    font-size: 0.9rem;
+}
+
+/* Separators */
+.sidebar-separator-title {
+    background-color: #020060;
+    height: 35px;
+}
+.sidebar-separator {
+    background-color: #020060;
+    height: 25px;
+}
+.logo-separator {
+    background-color: #020060;    
+    height: 60px;
+}
+
+/* Closed submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+/* Opened submenu icon */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+.list-group-item{
+    background-color: #020060;
+}
+.list-group-item:hover{
+    background-color: #090177;
+}
+.sidebar-separator-title{
+    background-color: #020146;
+}
+.cyan-color{
+    color: #5ce1e6;
+    opacity: 0.7;
+}
+
+.navbar-brand {
+    display: flex;
+    justify-self: center;
+}
+.logo-menu{
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+}
+.svg-inline--fa.fa-fw , #collapse-icon, .fa-star {
+    color: #ff6689;
+}
+
+.list-group-item-action:focus {
+    background-color: #4d51ff;
+}
+
+.navbar1, #navbar-header {
+    
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: block;
+}
+.navbar1{
+    display: none;
+    bottom: 0px!important;
+    background-color:#020060 ;
+}
+#navbar-header{
+    display: none;
+    z-index: 1;
+    background-color: white;
+    overflow: hidden;
+    opacity: 0.95;
+}
+#navbar-header>div{
+    position: relative;
+    left: 0;
+    right: 0;
+    
+}
+#navbar-header>div>img {
+    width: 135px;
+    height: auto;
+    margin: 10px auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    
+}
+#navbar-responsive>ul{
+    padding: 0px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+ul>li {
+    list-style: none;
+}
+
+
+#copyright{
+    position: fixed;
+    bottom: 0;
+    left: 10px;
+}
+#copyright > span {
+    color: #5ce1e6;
+    opacity: 0.5;
+    font-size: 13px;
+    text-align: justify;
+    margin: 0px auto;
+}
+
+/* MAIN PAGE CSS */
+
+.map-container{
+    overflow:hidden;
+    position:relative;
+    border: 1px solid #020060;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.map-container iframe{
+    left:0;
+    top:0;
+    height:500px;
+    width:100%;
+    position:absolute;
+}
+.deals-container{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    margin-top: 20px;
+}
+.card{
+    margin-bottom: 20px;
+    border: 1px solid #020060;
+    width: 49%;
+    color: #020060;
+    float: left;
+}
+.card:nth-child(2n-1){
+    float: right;
+}
+.card-header{
+    background-color: #020060;
+    color: white;
+    font-weight: bold;
+}
+.card-text{
+    color: #020060;
+}
+.btn{
+    background-color: #020060;
+    color: white;
+}
+.fa-angle-double-right{
+    color: #5ce1e6;
+}
+
+/* FAVORITS PAGE CSS */
+
+  .nav-tabs > li {
+      padding: 20px;
+  }
+
+  #exTab2 h3 {
+    padding : 5px 15px;
+  }
+@media(max-width : 767px){
+
+    .navbar1 {
+        display: block;
+        z-index: 1;
+    }
+    #main-content{
+        margin-left: 0px;
+        margin-bottom: 70px;
+        margin-top: 70px;
+    }
+    #navbar-header {
+        display: block;
+    }
+    
+}
+
+
+@media(max-width : 900px){
+    .deals-container{
+        display: block;
+    }
+    .card{
+        width: 100%;
+    }
+
+}
