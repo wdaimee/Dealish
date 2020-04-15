@@ -1,0 +1,169 @@
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<header class="restaurant-header">
+    <h1>CIBO</h1>
+    <p>Italian Wine Bar</p>
+</header>
+<main>
+    <div class="info-container">
+        <div class="restaurant-info">
+            <div class="card text-center ">
+                
+                <div class="card-body">
+                    <div class="card-column"> 
+                        <p>Address : 846 Bayview Ave</p>
+                    <p>Phone Number : 746029873</p>
+                    
+                    <button type="submit" class="btn" value="Like">
+                        <i class="fas fa-thumbs-up fa-fw mr-3"></i>810 people Like
+                    </button>
+                    <!-- <i class="fas fa-thumbs-down"></i> -->
+                    <br>
+                    <hr>
+                    <a href="#" class="btn"><span class="fas fa-tasks fa-fw mr-3"></span>Add to Favorites</a>
+                    <a href="#" class="btn"><span class="fas fa-share fa-fw mr-3"></span>Share the restaurant</a>
+                    </div>
+                    <div class="card-column">
+                        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                          style="border:0" allowfullscreen></iframe>
+                          <div>
+                            <a href="#" class="btn"><i class="fas fa-map-marker-alt fa-fw mr-3"></i>Get Direction</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deals-review">
+            <div class="card text-center ">
+                <div class="card-body">
+                <div class="deals card-column">
+                    <h3>Deals $ Happy Hours</h3>
+                    <ul>
+                        <li>
+                            <div>
+                                <h6>Pizza ( <span>MONDAY TO FRIDAY</span> ) </h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza ( <span>MONDAY TO FRIDAY</span> ) </h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza ( <span>MONDAY TO FRIDAY</span> ) </h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza ( <span>MONDAY TO FRIDAY</span> ) </h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza ( <span>MONDAY TO FRIDAY</span> ) </h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>Pizza(<span>MONDAY TO FRIDAY</span>)</h6>
+                            </div>
+                        <div>10$</div>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="review card-column">
+                    <h3>Add Review</h3>
+                    <form action="" method="post">
+                        <!-- Django requires the following for security purposes -->
+                        {% csrf_token %}
+                        <!-- <table> -->
+                          <!-- Render the inputs inside of <tr>s & <td>s -->
+                          <!-- {{ form.as_table }} -->
+                        <!-- </table> -->
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <input type="submit" value="Submit" class="btn submit">
+                      </form>
+                </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="review-container">
+        <div class="card">
+            <div class="card-header">
+                Reviews
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="review-header">
+                        <h5>Yasaman</h5>
+                        <div>
+                            <a class="fas fa-edit mr-3"></a>
+                            <a class="fas fa-trash-alt mr-3"></a>
+                        </div>
+                        
+                    </div>
+                    <div class="review-body">
+                        <p>We came here for the Sunday brunch buffet and were pleased with the selection of items available. The pasta station and dessert stations were particularly delicious. They also had a made-to-order pizza station which was quite great as well. They lost a star however due to the staff member at the omelette station who was more interested in being on his phone rather than promptly serving the guests who were waiting. I'm talking about blatantly texting in full view with his back turned away from us kind of bad. All other staff including our server were great though.</p>
+
+                    </div>
+                </div><hr>
+                <div>
+                    <div class="review-header">
+                        <h5>Yasaman</h5>
+                        <div>
+                            <i class="fas fa-edit mr-3"></i>
+                            <i class="fas fa-trash-alt  mr-3"></i>
+                        </div>
+                        
+                    </div>
+                    <div class="review-body">
+                        <p>We came here for the Sunday brunch buffet and were pleased with the selection of items available. The pasta station and dessert stations were particularly delicious. They also had a made-to-order pizza station which was quite great as well. They lost a star however due to the staff member at the omelette station who was more interested in being on his phone rather than promptly serving the guests who were waiting. I'm talking about blatantly texting in full view with his back turned away from us kind of bad. All other staff including our server were great though.</p>
+
+                    </div>
+                </div><hr>
+        </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
