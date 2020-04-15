@@ -24,7 +24,8 @@ class Restaurant(models.Model):
         if not self.coordinates:
             address = f"{self.address} {self.city}"
             address = address.encode('utf-8')
-            geocoder = GoogleV3(api_key=os.environ['GOOGLE_API_KEY'])
+            key = os.environ['GOOGLE_API_KEY']
+            geocoder = GoogleV3(api_key=key)
             try:
                 _, latlon = geocoder.geocode(address)
             except (URLError, ValueError, TypeError):
@@ -40,6 +41,9 @@ class Deal(models.Model):
     description = models.TextField(max_length=250)
     restraurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"Deal: {self.name} for {self.restraurant}"
+    
 class Review(models.Model):
     text = models.TextField(max_length=250)
     restraurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
