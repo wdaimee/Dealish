@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'geopy.geocoders',
     'django.contrib.gis',
+    'jsonify',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
