@@ -36,7 +36,7 @@ class Restaurant(models.Model):
             else:
                 point = f"POINT({latlon[1]} {latlon[0]})"
                 self.lat = latlon[0]
-                self.lat = latlon[1]
+                self.lng = latlon[1]
                 self.coordinates = geos.fromstr(point)
         super(Restaurant, self).save()
 
