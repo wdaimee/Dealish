@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+
+<header class="restaurant-header">
+    <h1>CIBO</h1>
+    <p>Italian Wine Bar</p>
+</header>
+<main>
+    <div class="info-container">
+        <div class="restaurant-info">
+            <div class="card text-center ">
+                
+                <div class="card-body">
+                    <div class="card-column"> 
+                        <p>Address : {{restaurant.address}}</p>
+                        <p>City: {{restaurant.city}}</p>
+                    <p>Phone Number : {{restaurant.phone_number}}</p>
+                    
+                    <button type="submit" class="btn" value="Like">
+                        <i class="fas fa-thumbs-up fa-fw mr-3"></i>{{restaurant.likes}} people Like
+                    </button>
+                    <!-- <i class="fas fa-thumbs-down"></i> -->
+                    <br>
+                    <hr>
+                    <a href="{% url 'add_favourite' %}" class="btn"><span class="fas fa-tasks fa-fw mr-3"></span>Add to Favorites</a>
+                    <a href="#" class="btn"><span class="fas fa-share fa-fw mr-3"></span>Share the restaurant</a>
+                    </div>
+                    <div class="card-column">
+                        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                          style="border:0" allowfullscreen></iframe>
+                          <div>
+                            <a href="#" class="btn"><i class="fas fa-map-marker-alt fa-fw mr-3"></i>Get Direction</a>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="deals-review">
+            <div class="card text-center ">
+                <div class="card-body">
+                <div class="deals card-column">
+                    <h3>Deals $ Happy Hours</h3>
+                    <ul>
+                        {% for deal in deals %}
+                        <li>
+                            <div>
+                                <h6>{{ deal.name }} ( <span>{{deal.description}}</span> ) </h6>
+                            </div>
+                        <div>${{deal.price}}</div>
+                        </li>
+                       {% endfor %}
+                    </ul>
+                </div>
+                <div class="review card-column">
+                    <h3>Add Review</h3>
+                    {% if object %}
+                    <form id="update-form" action="{% url 'update_review' %}" method="post"></form>
+                    {% else %}
+                    <form action="{% url 'add_review' restaurant_id=restaurant.id %}" method="post">
+                    {% endif %}
+                        <!-- Django requires the following for security purposes -->
+                        {% csrf_token %}
+                        <!-- <table> -->
+                          <!-- Render the inputs inside of <tr>s & <td>s -->
+                        {{ form|crispy }}
+                        <!-- </table> -->
+                        <input type="submit" value="Submit" class="btn submit">
+                      </form>
+                </div>
+                </div>
+        </div>
+        </div>
+    </div>
+    <div class="review-container">
+        <div class="card">
+            <div class="card-header">
+                Reviews
+            </div>
+            <div class="card-body">
+                {% for review in reviews %}
+                <div>
+                    <div class="review-header">
+                        <h5>{{user.username}}</h5>
+                        <div>
+                            <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
+                            <a href="{% url 'delete_review' review.id %}" class="">DELETE</a>
+                        </div>
+                        
+                    </div>
+                    <div class="review-body">
+                        <p>{{review.text}}</p>
+                    </div>
+                </div><hr>
+                {% endfor %}
+        </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

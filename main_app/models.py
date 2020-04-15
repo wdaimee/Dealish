@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 import geopy.geocoders
 from geopy.geocoders import GoogleV3
 from urllib.error import URLError
+from django.urls import reverse
 import os
 
 
@@ -51,8 +52,11 @@ class Deal(models.Model):
     
 class Review(models.Model):
     text = models.TextField(max_length=250)
-    restraurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('restaurant_detail', kwargs={'restaurant_id': self.restaurant.id})
 
 class Favourite(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
