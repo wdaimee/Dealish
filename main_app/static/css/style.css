@@ -1,4 +1,3 @@
-
 body {
     background-image: url('../images/Untitled (3).png');
     background-size: cover;
@@ -9,31 +8,32 @@ body {
     transition: all 1s ease-in;
 }
 
-.container{
-    
+.container {
+
     display: grid;
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows:0.08fr 1fr 0.08fr;
-}
-#login-page {
-    grid-template-rows:0.15fr 1fr 0.07fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.08fr 1fr 0.08fr;
 }
 
-.item{
-    
+#login-page {
+    grid-template-rows: 0.15fr 1fr 0.07fr;
+}
+
+.item {
+
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
     justify-self: center;
     border: 1px solid rgb(192, 190, 190);
-    padding:15px 50px 10px 50px;
+    padding: 15px 50px 10px 50px;
     border-radius: 20px;
-    box-shadow: -7px 0px 7px -5px rgb(252, 213, 219), 7px 0px 7px -5px #b6c2f3, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: -7px 0px 7px -5px rgb(252, 213, 219), 7px 0px 7px -5px #b6c2f3, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
-   
+
 }
 
 .item>img {
@@ -48,50 +48,58 @@ body {
     width: 150px;
     margin-top: 20px;
 }
-.btn-primary:hover{
+
+.btn-primary:hover {
     background-color: #4d51ff;
 }
-label{
+
+label {
     font-size: 20px;
 }
-p.row{
+
+p.row {
     margin-top: 15px;
 }
-a{
+
+a {
     color: #020060;
 }
+
 a:hover {
-    color:  #4d51ff;
+    color: #4d51ff;
     text-decoration: none;
 }
 
 
 @media only screen and (max-width: 992px) {
-    body{
+    body {
         background-image: url('../images/Untitled (4).png');
         background-position: 6%;
         transition: none;
     }
-    .container{
+
+    .container {
         display: grid;
-        grid-template-columns:1fr;
-        grid-template-rows:0.04fr 1fr 0.04fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.04fr 1fr 0.04fr;
     }
-    .item{
+
+    .item {
         grid-column-start: 0;
         grid-column-end: 1;
         grid-row-start: 2;
         grid-row-end: 3;
-        padding:15px 30px 10px 30px;
-        
+        padding: 15px 30px 10px 30px;
+
     }
+
     #login-page {
-        grid-template-rows:0.1fr 1fr 0.1fr;
+        grid-template-rows: 0.1fr 1fr 0.1fr;
     }
 }
 
-@media only screen and (max-width: 1024px)and (min-width:992px ){
-    body{
+@media only screen and (max-width: 1024px)and (min-width:992px) {
+    body {
         background-position: 40% 10%;
         background-size: inherit;
         transition: none;
