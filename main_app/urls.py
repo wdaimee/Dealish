@@ -18,8 +18,6 @@ urlpatterns = [
     path('restaurant/<int:restaurant>/like/', views.add_like, name='add_like'),
     # Dislike a restaurant page, only one dislike per logged in user
     path('restaurant/<int:restaurant>/dislike/', views.dislike, name='dislike'),
-    # View a user's profile
-    path('user/<int:user_id>/', views.user_detail, name='user_detail'),
     # view all favourite restaurants for a logged in user,
     path('user/<int:user_id>/favourites/', views.favourites_index, name='favourites_index'),
     # Add a restaurant to a user's favourites list

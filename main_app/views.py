@@ -63,9 +63,6 @@ def add_like(request):
 def dislike(request):
     pass
 
-def user_detail(request):
-    pass
-
 def favourites_index(request):
     pass
 
