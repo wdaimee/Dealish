@@ -7,22 +7,6 @@ var map, infoWindow, userPosition;
 
         infoWindow = new google.maps.InfoWindow;
 
-        // get information from csrf_token
-        const csrftoken = $.cookie('csrftoken');
-
-        function csrfSafeMethod(method) {
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-
-        // setup csrf_token submission before main AJAX request
-        $.ajaxSetup({
-            beforeSend: function(xhr, settings) {
-                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                    xhr.setRequestHeader("X-CSRFToken", csrftoken);
-                }
-            }
-        });
-          
         // Geolocation coordinates with Google Maps API to get User location
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -41,7 +25,6 @@ var map, infoWindow, userPosition;
                 data: {
                     lat: pos.lat,
                     long: pos.lng,
-                    csrfmiddlewaretoken: window.CSRF_TOKEN
                 },
                 success: function(data) {
                     console.log(data)
@@ -50,7 +33,6 @@ var map, infoWindow, userPosition;
                         let latlng = {}
                         latlng.lat = res.lat
                         latlng.lng = res.lng
-                        console.log(latlng)
                         const marker = new google.maps.Marker({
                             position: latlng,
                             map: map,
@@ -59,7 +41,6 @@ var map, infoWindow, userPosition;
                                 text: res.name
                             }
                         });
-                        console.log(`${res.res_id}`)
                         let block = `<div class="card text-center">` +
                                         `<div class="card-header">${res.deal_name}</div>` +
                                         `<div class="card-body">` +
