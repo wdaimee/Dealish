@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/Untitled3.png');
+    background-image: url("../images/Untitled3.bdbf6f02d66c.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -73,7 +73,7 @@ a:hover {
 
 @media only screen and (max-width: 992px) {
     body {
-        background-image: url('../images/Untitled4.png');
+        background-image: url("../images/Untitled4.8719d5f1e4bc.png");
         background-position: 6%;
         transition: none;
     }
