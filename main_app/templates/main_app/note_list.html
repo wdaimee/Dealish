@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="restaurant-header">
+    <h1>Favorites</h1>
+    <p>My WOW Deals</p>
+</header>
+
+<div class="card-container favorites">
+    <div class="card ">
+        <div class="card-header">
+            <span class="fas fa-star fa-fw mr-3"></span>
+            <a>Xyz restaurant</a> 
+            <!-- add the href to the a and link it to restaurant  -->
+        </div>
+        <div class="card-body">
+            <h6>
+                MY NOTE :
+            </h6> 
+           <p>
+               Fries are really good Fries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodvFries are really goodvvvFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really goodFries are really good
+           </p>
+           <div class="float-right">
+            <a href="#" class="btn"><span class="fas fa-edit  fa-fw mr-3"></span>Edit</a>
+            <a href="#" class="btn"><span class="fas fa-trash-alt fa-fw mr-3"></span>Delete</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Container -->
+<div class="card-container favorites">
+    <div class="card ">
+        <div class="card-header">
+            <span class="fas fa-star fa-fw mr-3"></span>
+            <a>Xyz restaurant</a> 
+            <!-- add the href to the a and link it to restaurant  -->
+        </div>
+        <!-- if we have note show this card_body else show the perivouse card body  -->
+        <div class="card-body">
+            
+            <h6>
+                You did not add ant notes yet.
+            </h6> 
+           <p>
+           </p>
+           <div class="float-right">
+            <a href="#" class="btn"><span class="fas fa-plus fa-fw mr-3"></span>Add Note</a>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}
