@@ -2,10 +2,10 @@
 {% load crispy_forms_tags %}
 {% block content %}
 {% load static %}
+{% load space_plus %}
 
 <header class="restaurant-header">
-    <h1>CIBO</h1>
-    <p>Italian Wine Bar</p>
+    <h1>{{restaurant.name}}</h1>
 </header>
 <main>
     <div class="info-container">
@@ -28,10 +28,10 @@
                     <a href="#" class="btn"><span class="fas fa-share fa-fw mr-3"></span>Share the restaurant</a>
                     </div>
                     <div class="card-column">
-                        <iframe src="https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                        <iframe src="https://maps.google.com/maps?q={{restaurant.address|space_plus}}+{{restaurant.city}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
                           style="border:0" allowfullscreen></iframe>
                           <div>
-                            <a href="#" class="btn"><i class="fas fa-map-marker-alt fa-fw mr-3"></i>Get Direction</a>
+                            <a href="https://maps.google.com/?q={{restaurant.address|space_plus}}+{{restaurant.city}}" class="btn"><i class="fas fa-map-marker-alt fa-fw mr-3"></i>Get Direction</a>
                           </div>
                     </div>
                 </div>
@@ -82,10 +82,12 @@
                 {% for review in reviews %}
                 <div>
                     <div class="review-header">
-                        <h5>{{user.username}}</h5>
+                        <h5>{{review.user.username}}</h5>
                         <div>
+                            {% if review.user.username == user.username %}
                             <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
-                            <a href="{% url 'delete_review' review.id %}" class="">DELETE</a>
+                            <a href="{% url 'delete_review' restaurant_id=restaurant.id review_id=review.id %}" class="">DELETE</a>
+                            {% endif %}
                         </div>
                         
                     </div>

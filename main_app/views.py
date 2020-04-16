@@ -66,22 +66,31 @@ def add_review(request, restaurant_id):
     if form.is_valid():
         new_review = form.save(commit=False)
         new_review.restaurant_id = restaurant_id
-        new_review.user_id = 1
+        new_review.user = request.user
         new_review.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
 
-
-class Delete_review(LoginRequiredMixin, DeleteView):
-    model = Review
-    succes_url = '/restaurants/'
+# class DeleteReview(LoginRequiredMixin, DeleteView):
+#     model = Review
+#     def get_queryset(self):
+#         q_s = super(DeleteReview, self).get_queryset()
+#         return q_s.filter(user=self.request.user)
+#     success_url = '/deals/'
     
-        
+def delete_review(request, restaurant_id, review_id):
+    review = Review.objects.get(id=review_id)
+    if request.user == review.user:
+        Review.objects.filter(id=review_id).delete()
+        return redirect('restaurant_detail', restaurant_id)
 
 # Use the same form as add_review
 
 class UpdateReview(LoginRequiredMixin, UpdateView):
     model = Review
     fields = ['text']
+    def get_queryset(self):
+        q_s = super(UpdateReview, self).get_queryset()
+        return q_s.filter(user=self.request.user)
 
 @login_required
 def add_like(request):
@@ -140,3 +149,4 @@ def get_restaurants(longitude, latitude):
     distance_from_point = {'km': 10}
     restaurants = Restaurant.objects.filter(coordinates__distance_lte=(current_point, measure.D(**distance_from_point))).annotate(distance=Distance('coordinates', current_point)).order_by('distance')
     return restaurants
+
