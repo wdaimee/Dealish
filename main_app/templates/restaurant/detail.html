@@ -86,7 +86,7 @@
                         <div>
                             {% if review.user.username == user.username %}
                             <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
-                            <a href="{% url 'Delete_review' review.id %}" class="">DELETE</a>
+                            <a href="{% url 'delete_review' restaurant_id=restaurant.id review_id=review.id %}" class="">DELETE</a>
                             {% endif %}
                         </div>
                         

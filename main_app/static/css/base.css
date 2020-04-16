@@ -226,11 +226,11 @@ ul>li {
     border: 1px solid #020060;
     width: 49%;
     color: #020060;
-    float: left;
+    float: right;
 }
 
 .card:nth-child(2n-1) {
-    float: right;
+    float: left !important;
 }
 
 .card-header {

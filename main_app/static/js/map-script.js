@@ -47,7 +47,6 @@ var map, infoWindow, userPosition;
                                         `<div class="card-body">` +
                                             `<h5 class="card-title">${res.name}</h5>` +
                                             `<p class="card-text">${res.deal_description}</p>` +
-                                            '<a href="#" class="btn"><span class="fas fa-star fa-fw mr-3"></span>Favorites</a>' +
                                             `<a href="/restaurant/${res.res_id}/" class="btn">See more deals</a>` +
                                         '</div>' +
                                      '</div>';

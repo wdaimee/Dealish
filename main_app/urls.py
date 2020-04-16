@@ -11,7 +11,7 @@ urlpatterns = [
     # create a review for a restaurant, login required
     path('restaurant/<int:restaurant_id>/review/add/', views.add_review, name='add_review'),
     # delete a review for a restaurant, only by user who created, login required
-    path('review/<int:pk>/delete/', views.DeleteReview.as_view(), name='Delete_review'),
+    path('restaurant/<int:restaurant_id>/review/<int:review_id>/delete/', views.delete_review, name='delete_review'),
     # edit a review for a restaurant, only by user who created, login required
     path('review/<int:pk>/update/', views.UpdateReview.as_view(), name='update_review'),
     # Add a like to a resturant page, only one like per logged in user
