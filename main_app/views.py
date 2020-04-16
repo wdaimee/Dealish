@@ -69,13 +69,6 @@ def add_review(request, restaurant_id):
         new_review.user = request.user
         new_review.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
-
-# class DeleteReview(LoginRequiredMixin, DeleteView):
-#     model = Review
-#     def get_queryset(self):
-#         q_s = super(DeleteReview, self).get_queryset()
-#         return q_s.filter(user=self.request.user)
-#     success_url = '/deals/'
     
 def delete_review(request, restaurant_id, review_id):
     review = Review.objects.get(id=review_id)
