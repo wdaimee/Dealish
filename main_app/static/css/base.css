@@ -7,6 +7,10 @@
     background-color: #020146;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* MENU CSS */
 #body-row {
     margin-left: 0;
@@ -221,10 +225,16 @@ ul>li {
 .card {
     margin-bottom: 20px;
     height: 250px;
+    overflow-y: scroll;
     border: 1px solid #020060;
     width: 49%;
     color: #020060;
     float: right;
+}
+
+.card-deal {
+    height: 250px;
+    overflow-y: scroll;
 }
 
 .card:nth-child(2n-1) {

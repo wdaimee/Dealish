@@ -41,8 +41,7 @@ var map, infoWindow, userPosition;
                                 text: res.name
                             }
                         });
-                        let BASE_URL = '127.0.0.1'
-                        let block = `<div class="card text-center">` +
+                        let block = `<div class="card deal-card text-center">` +
                                         `<div class="card-header">${res.deal_name}</div>` +
                                         `<div class="card-body">` +
                                             `<h5 class="card-title">${res.name}</h5>` +
