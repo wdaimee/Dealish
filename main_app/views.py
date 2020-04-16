@@ -8,7 +8,7 @@ def redirect_view(request):
     return redirect('deals/')
 
 def deals_index(request):
-    pass
+    return render(request, 'deals/index.html')
     
 def restaurant_detail(request):
     pass
