@@ -93,7 +93,7 @@
 }
 
 .list-group-item:hover {
-    background-color: #090177;
+    background-color: #4d51ff;
 }
 
 .sidebar-separator-title {
@@ -261,6 +261,17 @@ ul>li {
     float: right;
 }
 
+#dltfav {
+    background-color: white;
+    color: #020060;
+    float: right;
+}
+
+
+#dltfav:hover{
+    background-color: #4d51ff;
+    color: white;
+}
 /* RESTAURANT PAGE CSS */
 
 .restaurant-header {

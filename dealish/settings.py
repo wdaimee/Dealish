@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'main_app',
     'crispy_forms',
+    'favicon',
     'geopy.geocoders',
     'django.contrib.gis',
     'jsonify',
