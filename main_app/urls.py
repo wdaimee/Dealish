@@ -30,4 +30,5 @@ urlpatterns = [
     path('favourites/<int:favourite_id>/note/<int:note_id>/update/', views.update_note, name='update_note'),
     # Sign up a new user
     path('accounts/signup/', views.signup, name='signup'),
+    path('about/', views.about_dealish, name='about_dealish')
 ]
