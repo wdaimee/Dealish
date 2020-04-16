@@ -85,8 +85,8 @@
                         <h5>{{review.user.username}}</h5>
                         <div>
                             {% if review.user.username == user.username %}
-                            <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
-                            <a href="{% url 'delete_review' restaurant_id=restaurant.id review_id=review.id %}" class="">DELETE</a>
+                            <a href="{% url 'update_review' review.id %}" class="btn"><span class="fas fa-edit  fa-fw mr-3"></span>Edit</a>
+                            <a href="{% url 'delete_review' restaurant_id=restaurant.id review_id=review.id %}" class="btn"><span class="fas fa-trash-alt fa-fw mr-3"></span>Delete</a>
                             {% endif %}
                         </div>
                         

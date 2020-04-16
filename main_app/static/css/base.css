@@ -224,15 +224,13 @@ ul>li {
 
 .card {
     margin-bottom: 20px;
-    height: 250px;
-    overflow-y: scroll;
     border: 1px solid #020060;
     width: 49%;
     color: #020060;
     float: right;
 }
 
-.card-deal {
+.deal-card {
     height: 250px;
     overflow-y: scroll;
 }
@@ -324,7 +322,7 @@ ul>li {
 }
 
 .form-control {
-    height: 30px;
+    height: 60px;
 }
 
 .card-column:first-child {
