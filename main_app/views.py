@@ -127,6 +127,12 @@ def delete_note(request):
 def update_note(request):
     pass
 
+
+def about_dealish(request):
+    return render(request, 'about.html')
+
+
+
 def signup(request):
     form = UserCreationForm(request.POST or None)
     if request.method == 'POST':
