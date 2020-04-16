@@ -84,8 +84,10 @@
                     <div class="review-header">
                         <h5>{{review.user.username}}</h5>
                         <div>
+                            {% if review.user.username == user.username %}
                             <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
-                            <a href="{% url 'delete_review' review.id %}" class="">DELETE</a>
+                            <a href="{% url 'Delete_review' review.id %}" class="">DELETE</a>
+                            {% endif %}
                         </div>
                         
                     </div>
