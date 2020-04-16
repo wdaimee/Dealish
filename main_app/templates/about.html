@@ -1,2 +1,45 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content%}
 
+
+
+
+
+<div class="about_page">
+    <div class="about-card mx-auto text-center">
+        <h2>About Dealish</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore magni doloremque molestiae quae quod? Nesciunt suscipit reprehenderit dolorum est. Cumque repellendus nam ex molestias quo. Amet non repellat nihil eligendi.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore magni doloremque molestiae quae quod? Nesciunt suscipit reprehenderit dolorum est. Cumque repellendus nam ex molestias quo. Amet non repellat nihil eligendi.</p>
+        <div>
+            <h2>Our Team</h2>
+            <div class="team-card">
+                <div class="team">
+                    <img src="{% static 'images/waqas.jpg'%}">
+                    <h5>Waqas</h5>
+                    <p>Full-Stack Developer</p>
+                    <a href="https://github.com/wdaimee"><img src="{% static 'images/git.png' %}"></a>
+                    <a><img src="{% static 'images/lin.png' %}"></a>
+                </div>
+                <div class="team">
+                    <img src="{% static 'images/yasaman.jpg'%}">
+                    <h5>Yasaman Loghmani</h5>
+                    <p>Full-Stack Developer</p>
+                    <a href="https://github.com/yasamanloghmani"><img src="{% static 'images/git.png' %}"></a>
+                    <a href="https://linkedin.com/in/yasamanloghmani"><img src="{% static 'images/lin.png' %}"></a>
+                
+                </div>
+                <div class="team">
+                    <img src="{% static 'images/antoine.jpg'%}">
+                    <h5>Antoine</h5>
+                    <p>Full-Stack Developer</p>
+                    <a href="https://github.com/sols-dv"><img src="{% static 'images/git.png' %}"></a>
+                    <a><img src="{% static 'images/lin.png' %}"></a>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

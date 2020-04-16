@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Collapsible sidebar</title>
+    <title>Dealish</title>
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -20,6 +20,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+    
 
 </head>
 
@@ -34,17 +35,11 @@
     <nav class="navbar1">
         <div id="navbar-responsive">
             <ul>
-<<<<<<< HEAD
+
                 <li><a href="{% url 'deals_index' %}" aria-hidden="true"><span class="fa fa-map fa-fw mr-3 fa-2x"></span></a></li>
                 <li><a href="{% url 'favourites_index'%}"><span class="fas fa-tasks fa-fw mr-3 fa-2x"></span></a></li>
+                <li><a href="{% url 'about_dealish' %}"><span class="fas fa-info-circle fa-fw mr-3 fa-2x"></span></a></li>
                 <li><a href="{% url 'logout' %}"><span class="fas fa-user fa-fw mr-3 fa-2x"></span></a></li>
-                <li><a href="{% url 'about_dealish' %}"><span class="fa fa-question fa-fw mr-3 fa-2x"></span></a></li>
-=======
-                <li><a href="{% url 'deals_index' %}" class="fa fa-map fa-fw mr-3 fa-2x" aria-hidden="true"></a></li>
-                <li><a class="fas fa-tasks fa-fw mr-3 fa-2x"></a></li>
-                <li><a class="fas fa-user fa-fw mr-3 fa-2x"></a></li>
-                <li><a class="fa fa-question fa-fw mr-3 fa-2x"></a></li>
->>>>>>> b7b770949fe1ec6eed61f556e6663e5916589f68
             </ul>
         </div>
     </nav>
@@ -62,50 +57,55 @@
                     <small class="cyan-color">MAIN MENU</small>
                 </li>
 
-                <a href="{% url 'deals_index' %}" data-toggle="collapse" aria-expanded="false"
+                <div  data-toggle="collapse" aria-expanded="false"
                     class=" list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-start align-items-center">
+                    <a href="{% url 'deals_index' %}">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-map fa-fw mr-3" aria-hidden="true"></span>
                         <span class="menu-collapsed">Dashboard</span>
                     </div>
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class="fas fa-tasks fa-fw mr-3"></span>
-                        <span class="menu-collapsed">Favorites</span>
-                    </div>
-                </a>
-                <a href="{% url 'logout' %}" data-toggle="collapse" aria-expanded="false"
+                    </a>
+                    
+                </div>
+                <div href="#" class="list-group-item list-group-item-action">
+                    <a href="{% url 'favourites_index'%}">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fas fa-tasks fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Favorites</span>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div href="#" class="list-group-item list-group-item-action">
+                    <a href="{% url 'about_dealish' %}">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fas fa-info-circle fa-fw mr-3"></span>
+                            <span class="menu-collapsed">About DEALISH</span>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div href="{% url 'logout' %}" data-toggle="collapse" aria-expanded="false"
                     class=" list-group-item list-group-item-action flex-column align-items-start">
-                    <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class="fas fa-user fa-fw mr-3"></span>
-                        <span class="menu-collapsed">Sign out</span>
-                        <!-- <span class="fa fa-sort ml-auto submenu-icon"></span> -->
-                    </div>
-                </a>
-
-                <!-- <div id='submenu2' class="collapse sidebar-submenu">
-                    <a href="#" class="list-group-item list-group-item-action text-white">
-                        <span class="menu-collapsed">Settings</span>
+                    <a href="{% url 'logout' %}">
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span class="fas fa-user fa-fw mr-3"></span>
+                            <span class="menu-collapsed">Sign out</span>
+                        </div>
                     </a>
-                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-white">
-                        <span class="menu-collapsed"></span>
-                    </a>
-                </div> -->
-                <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span class="fa fa-question fa-fw mr-3"></span>
-                        <span class="menu-collapsed">About DEALISH</span>
-                    </div>
-                </a>
-                <a href="#top" data-toggle="sidebar-colapse"
+                    
+                </div>
+                <div href="#top" data-toggle="sidebar-colapse"
                     class=" list-group-item list-group-item-action d-flex align-items-center">
-                    <div class="d-flex w-100 justify-content-start align-items-center">
-                        <span id="collapse-icon" class="fa fa-2x mr-3"></span>
-                        <span id="collapse-text" class="menu-collapsed">Collapse</span>
-                    </div>
+                    <a>
+                        <div class="d-flex w-100 justify-content-start align-items-center">
+                            <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                            <span id="collapse-text" class="menu-collapsed">Collapse</span>
+                        </div>
+                    </a>
+                    
 
-                </a>
+                </div>
             </ul>
             <div id="copyright">
                 <span>Copyright © 2020 Dealish.</span>
