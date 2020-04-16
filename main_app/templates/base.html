@@ -20,8 +20,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+    <!-- JS for google maps -->
+    <script async src="{% static 'js/map-script.js'%}">
+    </script>
+    <!-- Google maps API -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAX-DNJovYjmvp7zfZ1TImgf1XHuU9gfc&callback=initMap">
+    </script>
     
-
 </head>
 
 <body>
@@ -128,12 +133,6 @@
     <script src="{% static 'js/main.js' %}"></script>
     <!-- JS for jQuery/Ajax calls -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script>
-    <!-- JS for google maps -->
-    <script async defer src="{% static 'js/map-script.js'%}">
-    </script>
-    <!-- Google maps API -->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAX-DNJovYjmvp7zfZ1TImgf1XHuU9gfc&callback=initMap">
     </script>
 </body>
 </html>

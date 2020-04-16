@@ -139,7 +139,7 @@ def signup(request):
 # Function to get a list of restaurants in your area that are within 10 KM of user location
 def get_restaurants(longitude, latitude):
     current_point = geos.fromstr("POINT(%s %s)" % (longitude, latitude), srid=4326)
-    distance_from_point = {'km': 10}
+    distance_from_point = {'km': 100}
     restaurants = Restaurant.objects.filter(coordinates__distance_lte=(current_point, measure.D(**distance_from_point))).annotate(distance=Distance('coordinates', current_point)).order_by('distance')
     return restaurants
 
