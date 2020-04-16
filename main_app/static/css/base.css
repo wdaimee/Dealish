@@ -220,6 +220,7 @@ ul>li {
 
 .card {
     margin-bottom: 20px;
+    height: 150px;
     border: 1px solid #020060;
     width: 49%;
     color: #020060;
