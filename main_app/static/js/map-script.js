@@ -21,7 +21,7 @@ var map, infoWindow, userPosition;
                 type: 'GET',
                 contentType: 'application/json;charset-utf-08',
                 dataType:'json',
-                url:'http://127.0.0.1:8000/deals/',
+                url:'https://dealish.herokuapp.com/deals',
                 data: {
                     lat: pos.lat,
                     long: pos.lng,
