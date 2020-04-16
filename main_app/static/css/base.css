@@ -455,7 +455,9 @@ ul>li {
         display: block;
         width: 100%;
     }
-
+    .about-card {
+        width: 100%;
+    }
 }
 
 
@@ -498,7 +500,7 @@ ul>li {
         
     }
     .team-card > .team{
-        width: 90%;
+        width: 100%;
         margin-bottom: 10px;
         padding: 10px;
     }
