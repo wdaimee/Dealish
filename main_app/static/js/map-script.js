@@ -41,15 +41,17 @@ var map, infoWindow, userPosition;
                                 text: res.name
                             }
                         });
+                        let BASE_URL = '127.0.0.1'
                         let block = `<div class="card text-center">` +
                                         `<div class="card-header">${res.deal_name}</div>` +
                                         `<div class="card-body">` +
                                             `<h5 class="card-title">${res.name}</h5>` +
                                             `<p class="card-text">${res.deal_description}</p>` +
-                                            '<a href="" class="btn"><span class="fas fa-star fa-fw mr-3"></span>Favorites</a>' +
-                                            '<a href="#" class="btn">See more deals</a>' +
+                                            '<a href="#" class="btn"><span class="fas fa-star fa-fw mr-3"></span>Favorites</a>' +
+                                            `<a href="/restaurant/${res.res_id}/" class="btn">See more deals</a>` +
                                         '</div>' +
                                      '</div>';
+                        console.log(block);
                         document.getElementById('restaurant_list').innerHTML += block;
                         block = '';
                     });
