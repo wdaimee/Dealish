@@ -388,19 +388,15 @@ ul>li {
 .about-card {
     margin-top: 50px;
     width: 80%;
-    border: 1px solid rgb(192, 190, 190);
-    padding: 15px 50px 10px 50px;
-    border-radius: 20px;
-    box-shadow: -7px 0px 7px -5px rgb(252, 213, 219), 7px 0px 7px -5px #b6c2f3, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    
+   
 }
 .about-card  h2 {
     text-shadow: -2px -1px rgb(252, 213, 219);
     margin: 2%;
     
 }
-.about-card > p {
-    text-align: left;
+.about-card > div {
+    margin-top: 40px;
 }
 .team-card {
     display: flex;
