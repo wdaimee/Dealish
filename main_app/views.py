@@ -70,10 +70,10 @@ def add_review(request, restaurant_id):
         new_review.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
 
-class Delete_review(LoginRequiredMixin, DeleteView):
+class DeleteReview(LoginRequiredMixin, DeleteView):
     model = Review
     def get_queryset(self):
-        q_s = super(Delete_review, self).get_queryset()
+        q_s = super(DeleteReview, self).get_queryset()
         return q_s.filter(user=self.request.user)
     success_url = '/deals/'
     
@@ -88,6 +88,9 @@ class Delete_review(LoginRequiredMixin, DeleteView):
 class UpdateReview(LoginRequiredMixin, UpdateView):
     model = Review
     fields = ['text']
+    def get_queryset(self):
+        q_s = super(UpdateReview, self).get_queryset()
+        return q_s.filter(user=self.request.user)
 
 @login_required
 def add_like(request):

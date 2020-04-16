@@ -55,7 +55,7 @@
                     <small class="cyan-color">MAIN MENU</small>
                 </li>
 
-                <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
+                <a href="{% url 'deals_index' %}" data-toggle="collapse" aria-expanded="false"
                     class=" list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fa fa-map fa-fw mr-3" aria-hidden="true"></span>
@@ -68,7 +68,7 @@
                         <span class="menu-collapsed">Favorites</span>
                     </div>
                 </a>
-                <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
+                <a href="{% url 'logout' %}" data-toggle="collapse" aria-expanded="false"
                     class=" list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-start align-items-center">
                         <span class="fas fa-user fa-fw mr-3"></span>
