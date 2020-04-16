@@ -32,6 +32,7 @@ def decimal_default(obj):
 
 #Main page with a list of deals in your area, will send back JSON response with a list of restaurants
 # in your area, used to display markers and populate cards with restaurant and deal information
+@login_required
 def deals_index(request):
     restaurants = []
     if request.GET and request.is_ajax():
@@ -47,7 +48,8 @@ def deals_index(request):
         print(restaurants)    
         return JsonResponse(json.dumps(list(restaurants), default=decimal_default), safe=False)
     return render(request, 'deals/index.html', {'restaurants': restaurants, 'reply':'success'})
-    
+
+@login_required    
 def restaurant_detail(request, restaurant_id):
     restaurant = Restaurant.objects.get(id=restaurant_id)
     review_form = ReviewForm()
@@ -58,6 +60,7 @@ def restaurant_detail(request, restaurant_id):
 # follow add feeding cats lesson, form will be needed, 
 # logged in user needs to be added to review when created
 
+@login_required
 def add_review(request, restaurant_id):
     form = ReviewForm(request.POST)
     if form.is_valid():
@@ -67,15 +70,20 @@ def add_review(request, restaurant_id):
         new_review.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
 
+
 class Delete_review(LoginRequiredMixin, DeleteView):
     model = Review
-    success_url = '/deals/'
+    succes_url = '/restaurants/'
+    
+        
 
 # Use the same form as add_review
+
 class UpdateReview(LoginRequiredMixin, UpdateView):
     model = Review
     fields = ['text']
-    
+
+@login_required
 def add_like(request):
     pass
 
@@ -93,17 +101,20 @@ def add_favourite(request, restaurant_id):
         new_fav.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
 
-class Delete_favourite(DeleteView):
+class Delete_favourite(LoginRequiredMixin, DeleteView):
     model = Favourite
     success_url = '/favourties/'
 
 # form needed
+@login_required
 def add_note(request):
     pass
 
+@login_required
 def delete_note(request):
     pass
 
+@login_required
 def update_note(request):
     pass
 
