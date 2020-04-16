@@ -82,7 +82,7 @@
                 {% for review in reviews %}
                 <div>
                     <div class="review-header">
-                        <h5>{{user.username}}</h5>
+                        <h5>{{review.user.username}}</h5>
                         <div>
                             <a href="{% url 'update_review' review.id %}" class="">UPDATE</a>
                             <a href="{% url 'delete_review' review.id %}" class="">DELETE</a>

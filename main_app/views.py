@@ -66,7 +66,7 @@ def add_review(request, restaurant_id):
     if form.is_valid():
         new_review = form.save(commit=False)
         new_review.restaurant_id = restaurant_id
-        new_review.user_id = 1
+        new_review.user = request.user
         new_review.save()
     return redirect('restaurant_detail', restaurant_id=restaurant_id)
 
