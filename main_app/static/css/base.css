@@ -255,7 +255,14 @@ ul>li {
 
 /* FAVORITES PAGE CSS */
 
+.favorites > .card {
+    margin-top: 20px;
+    width: 100%;
+}
 
+.float-right {
+    float: right;
+}
 
 /* RESTAURANT PAGE CSS */
 
