@@ -297,6 +297,10 @@ ul>li {
     width: 49%;
 }
 
+.form-control {
+    height: 30px;
+}
+
 .card-column:first-child {
     border-right: 1px solid #020060;
 }

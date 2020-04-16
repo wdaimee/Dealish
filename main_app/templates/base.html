@@ -20,9 +20,11 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
+
 </head>
 
 <body>
+    {% if user.is_authenticated %}
     <nav id="navbar-header">
         <div>
             <img src="{% static 'images/dealishlogo.png' %}">
@@ -79,7 +81,7 @@
                     <a href="#" class="list-group-item list-group-item-action text-white">
                         <span class="menu-collapsed">Settings</span>
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action text-white">
+                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action text-white">
                         <span class="menu-collapsed">Sign out</span>
                     </a>
                 </div>
@@ -109,15 +111,22 @@
 
         </div>
     </div>
-
+    {% endif %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous">
     </script>
-    <script src="{% static 'js/base.js' %}"></script>
-
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- JS for jQuery/Ajax calls -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <!-- JS for google maps -->
+    <script async defer src="{% static 'js/map-script.js'%}">
+    </script>
+    <!-- Google maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAX-DNJovYjmvp7zfZ1TImgf1XHuU9gfc&callback=initMap">
+    </script>
 </body>
-
 </html>

@@ -1,24 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
 <!--Google map-->
 <div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px"></div>
 
 <!--Google Maps-->
-<div id='restaurant_list'>
-    <div class="card text-center ">
-        <div class="card-header">
-            Special Wine
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Cibo (Italian Restaurant)</h5>
-            <p class="card-text">We offer half a price wine between 3PM to 6PM</p>
-            <a href="#" class="btn"><span class="fas fa-star fa-fw mr-3"></span>Favorites</a>
 
-            <a href="#" class="btn">See more deals</a>
-        </div>
-    </div>
-</div>
-<script async defer src="{% static 'js/map-script.js'%}"></script>
-<script async defer src=`https://maps.googleapis.com/maps/api/js?key=${os.environ['GOOGLE_API_KEY_2']}&callback=initMap`></script>
 
 {% endblock %}
