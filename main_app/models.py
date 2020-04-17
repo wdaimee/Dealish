@@ -62,6 +62,12 @@ class Favourite(models.Model):
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def get_absolute_url(self):
+        return reverse('favourites_index', kwargs={'pk': self.id})
+
 class Note(models.Model):
     text = models.TextField(max_length=250)
     favourite = models.ForeignKey(Favourite, on_delete=models.CASCADE)
+
+    def get_absolute_url(self):
+        return reverse('favourites_index')

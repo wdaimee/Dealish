@@ -10,6 +10,7 @@ class NotesForm(ModelForm):
     class Meta:
         model = Note
         fields = ['text']
+        exclude = ('interventions',)
 
 class FavouritesForm(ModelForm):
     class Meta:

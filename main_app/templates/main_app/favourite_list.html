@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<header class="restaurant-header">
+    <h1>Favourites</h1>
+    <p>My WOW Deals</p>
+</header>
+
+<!-- Container -->
+{% for fav in favourite_list %}
+<div class="card-container favorites">
+    <div class="card ">
+        <div class="card-header">
+            <span class="fas fa-star fa-fw mr-3"></span>
+            <a href="{% url 'restaurant_detail' restaurant_id=fav.restaurant.id %}">{{fav.restaurant.name}}
+            </a> 
+            <a href="{% url 'delete_favourite' favourite_id=fav.id %}" class="btn" id="dltfav"><span class="fas fa-trash-alt fa-fw mr-3" ></span>Delete Favourite</a>
+
+            <!-- add the href to the a and link it to restaurant  -->
+        </div>
+        <!-- if we have note show this card_body else show the perivouse card body  -->
+        {% if fav.note_set.first %}
+        <div class="card-body">
+            <h6>
+                MY NOTE :
+            </h6> 
+           <p>
+               {{ fav.note_set.first.text }}
+           </p>
+           <div class="float-right">
+            <a href="{% url 'update_note' fav.note_set.first.id %}" class="btn"><span class="fas fa-edit  fa-fw mr-3"></span>Edit Note</a>
+            <a href="{% url 'delete_note' note_id=fav.note_set.first.id%}" class="btn"><span class="fas fa-trash-alt fa-fw mr-3"></span>Delete Note</a>
+        </div>
+        </div>
+        {% else %}
+        <div class="card-body">
+            
+            <h6>
+                You did not add any notes yet.
+            </h6> 
+           <p>
+           </p>
+           <div class="float-right">
+            <a href="{% url 'add_note' fav.id %}" class="btn"><span class="fas fa-plus fa-fw mr-3"></span>Add Note</a>
+        </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+
+{% endblock%}

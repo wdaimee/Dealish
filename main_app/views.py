@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -89,42 +90,53 @@ class UpdateReview(LoginRequiredMixin, UpdateView):
 def add_like(request):
     pass
 
-@login_required
-def favourites_index(request, restaurant_id):
-    pass
+class FavouritesIndex(LoginRequiredMixin, ListView):
+    model = Favourite
     
-    
+    def get_queryset(self):
+        return Favourite.objects.filter(user=self.request.user)
+
 @login_required
 def add_favourite(request, restaurant_id):
     form = FavouritesForm(request.POST)
     if form.is_valid():
         new_fav = form.save(commit=False)
         new_fav.restaurant_id = restaurant_id
+        new_fav.user = request.user
         new_fav.save()
-    return redirect('restaurant_detail', restaurant_id=restaurant_id)
+    return redirect('favourites_index')
 
-class Delete_favourite(LoginRequiredMixin, DeleteView):
-    model = Favourite
+@login_required
+def delete_favourite(request, favourite_id):
+    favourite = Favourite.objects.get(id=favourite_id)
+    if request.user == favourite.user:
+        Favourite.objects.filter(id=favourite_id).delete()
+        return redirect('favourites_index')    
+
+class AddNote(LoginRequiredMixin, CreateView):
+    model = Note
+    fields = ['text']
     success_url = '/favourties/'
 
-# form needed
-@login_required
-def add_note(request):
-    pass
+    def form_valid(self, form):
+        favourite = Favourite.objects.get(pk=self.kwargs['favourite_id'])
+        self.object = form.save(commit=False)
+        self.object.favourite = favourite
+        self.object.save()
+        return redirect('/favourites/')
 
 @login_required
-def delete_note(request):
-    pass
+def delete_note(request, note_id):
+    Note.objects.filter(id=note_id).delete()
+    return redirect('favourites_index') 
+    
+class UpdateNote(LoginRequiredMixin, UpdateView):
+    model = Note
+    fields = ['text']
 
 @login_required
-def update_note(request):
-    pass
-
-
 def about_dealish(request):
     return render(request, 'about.html')
-
-
 
 def signup(request):
     form = UserCreationForm(request.POST or None)

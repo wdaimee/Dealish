@@ -17,17 +17,17 @@ urlpatterns = [
     # Add a like to a resturant page, only one like per logged in user
     path('restaurant/<int:restaurant_id>/like/', views.add_like, name='add_like'),
     # view all favourite restaurants for a logged in user,
-    path('favourites/', views.favourites_index, name='favourites_index'),
+    path('favourites/', views.FavouritesIndex.as_view(), name='favourites_index'),
     # Add a restaurant to a user's favourites list
-    path('favourites/add/', views.add_favourite, name='add_favourite'),
+    path('restaurant/<int:restaurant_id>/favourites/add/', views.add_favourite, name='add_favourite'),
     # remove a restaurant from a user's favourites list
-    path('favourites/<int:pk>/delete/', views.Delete_favourite.as_view(), name='delete_favourite'),
+    path('favourites/<int:favourite_id>/delete/', views.delete_favourite, name='delete_favourite'),
     # add a note to a user's favourite restaurant
-    path('favourites/<int:favourite_id>/add_note/', views.add_note, name='add_note'),
+    path('favourites/<int:favourite_id>/add_note/', views.AddNote.as_view(), name='add_note'),
     # Delete a note for a user's favourite restaurant
-    path('favoutires/<int:favourite_id/note/<int:note_id>/delete/', views.delete_note, name='delete_note'),
+    path('note/<int:note_id>/delete/', views.delete_note, name='delete_note'),
     # Edit a note for a user's favourite restaurant
-    path('favourites/<int:favourite_id>/note/<int:note_id>/update/', views.update_note, name='update_note'),
+    path('note/<int:pk>/update/', views.UpdateNote.as_view(), name='update_note'),
     # Sign up a new user
     path('accounts/signup/', views.signup, name='signup'),
     path('about/', views.about_dealish, name='about_dealish')
