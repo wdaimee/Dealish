@@ -403,16 +403,33 @@ ul>li {
 /* ABOUT PAGE CSS */
 .about-page{
     display: flex;
-    
 }
 .about-card {
     margin-top: 50px;
     width: 80%;
-   
 }
 .about-card  h2 {
     text-shadow: -2px -1px rgb(252, 213, 219);
     margin: 2%;
+    font-weight: bold;
+}
+.about-card p {
+    font-size: 18px;
+    font-weight: bold;
+    text-justify: inter-word;
+}
+.about-card h5{
+    font-weight: bold;
+    text-shadow:0.5px 0.5px #020060;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.about-card > ul > li {
+    text-align: center;
+    
+}
+#slogan{
+    color: #ff6689;
     
 }
 .about-card > div {
