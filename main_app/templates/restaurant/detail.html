@@ -25,7 +25,7 @@
                     <br>
                     <hr>
                     <a href="{% url 'add_favourite' restaurant_id=restaurant.id %}" class="btn"><span class="fas fa-tasks fa-fw mr-3"></span>Add to Favorites</a>
-                    <a href="#" class="btn"><span class="fas fa-share fa-fw mr-3"></span>Share the restaurant</a>
+                    <a href="#" class="btn" id="share-btn"><span class="fas fa-share fa-fw mr-3"></span>Share the restaurant</a>
                     </div>
                     <div class="card-column">
                         <iframe src="https://maps.google.com/maps?q={{restaurant.address|space_plus}}+{{restaurant.city}}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"

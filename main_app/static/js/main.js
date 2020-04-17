@@ -37,3 +37,12 @@ function SidebarCollapse() {
     // Collapse/Expand icon
     $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
 }
+
+
+
+
+document.getElementById('share-btn').addEventListener("click", shareFn);
+function shareFn(){
+    windowHref = window.location.href;
+    alert(windowHref);
+}
